@@ -200,7 +200,7 @@ jobs:
         ) as outputs_file:
             print('release-requested=true', file=outputs_file)
     - name: Check out src from Git
-      uses: actions/checkout@v4
+      uses: actions/checkout@v7
       with:
         fetch-depth: >-
           ${{
@@ -670,7 +670,7 @@ jobs:
 
     steps:
     - name: Fetch the src snapshot  # IMPORTANT: Must be before the tag check
-      uses: actions/checkout@v4
+      uses: actions/checkout@v7
       with:
         fetch-depth: 2
         ref: ${{ github.event.inputs.release-committish }}

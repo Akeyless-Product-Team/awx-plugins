@@ -137,7 +137,7 @@ jobs:
 
     steps:
     - name: Grab the source from Git
-      uses: actions/checkout@v4  # Keep before `setup-python` for cache to work
+      uses: actions/checkout@v7  # Keep before `setup-python` for cache to work
 
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v5
@@ -314,7 +314,7 @@ jobs:
         echo "lockfile-updates-needed=true" >> "${GITHUB_OUTPUT}"
     - name: Grab the source from Git
       if: steps.artifacts.outputs.lockfile-updates-needed
-      uses: actions/checkout@v4
+      uses: actions/checkout@v7
     - name: Setup git user as [bot]
       if: steps.artifacts.outputs.lockfile-updates-needed
       # Refs:
