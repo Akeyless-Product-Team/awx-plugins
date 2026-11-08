@@ -38,7 +38,7 @@ runs:
     shell: bash
   - name: Store the distribution packages
     if: fromJSON(inputs.calling-job-context).toxenv == 'build-dists'
-    uses: actions/upload-artifact@v4
+    uses: actions/upload-artifact@v7
     with:
       name: >-
         ${{
