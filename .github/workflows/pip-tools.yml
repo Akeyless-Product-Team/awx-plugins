@@ -140,7 +140,7 @@ jobs:
       uses: actions/checkout@v4  # Keep before `setup-python` for cache to work
 
     - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v5
+      uses: actions/setup-python@v7
       with:
         python-version: ${{ matrix.python-version }}
 
