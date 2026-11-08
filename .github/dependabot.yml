@@ -1,0 +1,20 @@
+# Automatic dependency update PRs, following the akeylesslabs AppSec baseline.
+# Check weekly; allow up to 100 open version-update PRs per update entry.
+# Existing repository-specific cooldowns, groups and registry settings are retained.
+version: 2
+updates:
+- package-ecosystem: github-actions
+  directories:
+  - /
+  - /.github/actions/cache-keys
+  - /.github/reusables/tox-dev/workflow/reusable-tox/hooks/post-src-checkout
+  - /.github/reusables/tox-dev/workflow/reusable-tox/hooks/post-tox-run
+  - /.github/reusables/tox-dev/workflow/reusable-tox/hooks/prepare-for-tox-run
+  schedule:
+    interval: weekly
+  open-pull-requests-limit: 100
+- package-ecosystem: pip
+  directory: /
+  schedule:
+    interval: weekly
+  open-pull-requests-limit: 100
