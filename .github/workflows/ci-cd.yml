@@ -796,7 +796,7 @@ jobs:
     - name: >-
         🔏
         Generate provenance attestations for the dists
-      uses: actions/attest-build-provenance@v1
+      uses: actions/attest-build-provenance@v4
       with:
         subject-path: |
           dist/${{ needs.pre-setup.outputs.sdist-artifact-name }}
